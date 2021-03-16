@@ -10,10 +10,11 @@ char map[100][100];
 int moves[100][100] = { 0 };
 
 int R, S;
+const int INF = INT_MAX / 2;
 
 char start;
 char mindir;
-int minmoves = 9999999;
+int minmoves = INF;
 
 void reset_moves();
 
@@ -82,7 +83,7 @@ int main() {
 
 	BFS(tX, tY, 0);
 
-	if (minmoves < 9999999) {
+	if (minmoves < INF) {
 		cout << ":)" << endl << mindir;
 	}
 	else cout << ":(";
